@@ -33,5 +33,11 @@ public class GestionPersonas {
         } while (continuar.equalsIgnoreCase("s"));
 
         System.out.println("\nCantidad de personas: " + personas.size());
+
+        double promedio = personas.stream()
+                .mapToInt(Persona::getEdad)
+                .average()
+                .orElse(0);
+        System.out.println("Promedio de edad: " + promedio);
     }
 }
