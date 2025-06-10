@@ -59,5 +59,11 @@ public class GestionPersonas {
                 .filter(p -> p.getCargo().equalsIgnoreCase("director") && p.getGenero().equals("M"))
                 .map(p -> p.getSueldoHora() * 8)
                 .forEach(sueldo -> System.out.println("Sueldo por 8 horas: $" + sueldo));
+
+        personas.stream()
+                .filter(p -> p.getCargo().equalsIgnoreCase("director") && p.getGenero().equals("M"))
+                .peek(p -> System.out.println("Nombre: " + p.getNombre() + " " + p.getApellido()))
+                .map(p -> p.getSueldoHora() * 8)
+                .forEach(sueldo -> System.out.println("Sueldo por 8 horas: $" + sueldo));
     }
 }
