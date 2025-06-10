@@ -49,5 +49,10 @@ public class GestionPersonas {
         personas.stream()
                 .filter(p -> p.getNombre().startsWith("A"))
                 .forEach(p -> System.out.println(p.getNombre()));
+
+        System.out.println("Personas con apellido que contiene 'M':");
+        personas.stream()
+                .filter(p -> p.getApellido().toUpperCase().contains("M"))
+                .forEach(p -> System.out.println(p.getApellido()));
     }
 }
