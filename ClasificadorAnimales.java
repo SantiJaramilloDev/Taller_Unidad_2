@@ -25,5 +25,10 @@ public class ClasificadorAnimales {
             System.out.print("¿Deseas ingresar otro animal? (s/n): ");
             opcion = scanner.nextLine();
         } while (opcion.equalsIgnoreCase("s"));
+        System.out.println("\nAnimales clasificados:");
+        clasificacion.forEach((tipo, lista) -> {
+            System.out.println(tipo.substring(0, 1).toUpperCase() + tipo.substring(1) + ":");
+            lista.forEach(animal -> System.out.println("  " + animal.getNombre()));
+        });
     }
 }
