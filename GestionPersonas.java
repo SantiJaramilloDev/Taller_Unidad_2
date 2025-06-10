@@ -39,5 +39,10 @@ public class GestionPersonas {
                 .average()
                 .orElse(0);
         System.out.println("Promedio de edad: " + promedio);
+
+        long mayores = personas.stream()
+                .filter(p -> p.getEdad() >= 18)
+                .count();
+        System.out.println("Mayores de edad: " + mayores);
     }
 }
