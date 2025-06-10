@@ -70,5 +70,14 @@ public class GestionPersonas {
                 .filter(p -> p.getGenero().equals("F") && p.getCargo().equalsIgnoreCase("desarrollador"))
                 .findFirst();
         primera.ifPresent(p -> System.out.println("Primera desarrolladora: " + p.getNombre() + " " + p.getApellido()));
+
+        Optional<Persona> masGana = personas.stream()
+                .filter(p -> p.getCargo().equalsIgnoreCase("desarrollador"))
+                .max(Comparator.comparingDouble(Persona::getSueldoHora));
+
+        if (masGana.isPresent()) {
+            Persona p = masGana.get();
+            System.out.println("Desarrollador que más gana: " + p.getNombre() + " $" + p.getSueldoHora());
+        }
     }
 }
