@@ -65,5 +65,10 @@ public class GestionPersonas {
                 .peek(p -> System.out.println("Nombre: " + p.getNombre() + " " + p.getApellido()))
                 .map(p -> p.getSueldoHora() * 8)
                 .forEach(sueldo -> System.out.println("Sueldo por 8 horas: $" + sueldo));
+
+        Optional<Persona> primera = personas.stream()
+                .filter(p -> p.getGenero().equals("F") && p.getCargo().equalsIgnoreCase("desarrollador"))
+                .findFirst();
+        primera.ifPresent(p -> System.out.println("Primera desarrolladora: " + p.getNombre() + " " + p.getApellido()));
     }
 }
