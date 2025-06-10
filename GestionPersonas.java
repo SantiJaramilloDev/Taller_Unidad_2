@@ -31,5 +31,7 @@ public class GestionPersonas {
             System.out.print("¿Deseas agregar otra persona? (s/n): ");
             continuar = scanner.nextLine();
         } while (continuar.equalsIgnoreCase("s"));
+
+        System.out.println("\nCantidad de personas: " + personas.size());
     }
 }
