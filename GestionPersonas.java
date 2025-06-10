@@ -79,5 +79,11 @@ public class GestionPersonas {
             Persona p = masGana.get();
             System.out.println("Desarrollador que más gana: " + p.getNombre() + " $" + p.getSueldoHora());
         }
+
+        System.out.println("Mujeres ordenadas por nombre:");
+        personas.stream()
+                .filter(p -> p.getGenero().equals("F"))
+                .sorted(Comparator.comparing(Persona::getNombre))
+                .forEach(p -> System.out.println(p.getNombre() + " " + p.getApellido()));
     }
 }
