@@ -44,5 +44,10 @@ public class GestionPersonas {
                 .filter(p -> p.getEdad() >= 18)
                 .count();
         System.out.println("Mayores de edad: " + mayores);
+
+        System.out.println("Personas con nombre que empieza con A:");
+        personas.stream()
+                .filter(p -> p.getNombre().startsWith("A"))
+                .forEach(p -> System.out.println(p.getNombre()));
     }
 }
